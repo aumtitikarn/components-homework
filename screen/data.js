@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Button, StyleSheet, StatusBar, Image } from 'react-native';
+import { View, Text, Button, StyleSheet, StatusBar, Image, ScrollView } from 'react-native';
 import { useMode } from './context';
 import { useLanguage } from './LanguageContext';
 
@@ -7,9 +7,9 @@ export default function Data({ isDarkMode}) {
   const { language } = useLanguage();
 
   return (
-    <View>
+    <ScrollView contentContainerStyle={styles.scrollView}>
       <Image source={require('../photo/content.jpg')} />
-      <View style={{ margin: 150, top: -100 }}>
+      <View style={{ margin: 20, top: 10 }}>
         <Text style={{ textAlign: 'center', fontWeight: 'bold', fontSize: 16, color: isDarkMode ? '#fff' : '#000' }}>
         {language === 'th' ? (
             'ประวัติมหาวิทยาลัยเทคโนโลยีสุรนารี'
@@ -25,6 +25,12 @@ export default function Data({ isDarkMode}) {
           )}
         </Text>
       </View>
-    </View>
+      </ScrollView>
   );
 }
+const styles = StyleSheet.create({
+  scrollView: {
+    alignItems: 'center',
+    height:1000
+  },
+})

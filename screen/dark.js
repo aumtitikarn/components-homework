@@ -12,7 +12,7 @@ import { useLanguage } from './LanguageContext';
   return (
     <View style={[styles.container, { backgroundColor: isDarkMode ? '#01244f' : '#fff' }]}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <View style={{top: -350, left:-150}}>
+      <View style={{ left:-150}}>
       <Text style={{ color: isDarkMode ? '#fff' : '#000' }}>{isDarkMode ? 'Dark-content' : 'Light-content'}</Text>
       <Switch
         style={{left:-15}}
@@ -24,7 +24,7 @@ import { useLanguage } from './LanguageContext';
       />
        <LanguageSwitcher isDarkMode={isDarkMode} changeLanguage={changeLanguage} />
       </View>
-      <View style={{height:10, top:-350}}>
+      <View>
       <Data isDarkMode={isDarkMode} language={language} />
       </View>
     </View>
