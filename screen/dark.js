@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Button, StyleSheet ,StatusBar,Switch} from 'react-native';
+import { View, Text, Button, StyleSheet ,StatusBar,Switch,SafeAreaView} from 'react-native';
 import { useMode } from './context'; // นำเข้า Context
 import Data from '../screen/data';
 import LanguageSwitcher from './LanguageSwitcher';
@@ -10,7 +10,7 @@ import { useLanguage } from './LanguageContext';
   const { language, changeLanguage } = useLanguage();
 
   return (
-    <View style={[styles.container, { backgroundColor: isDarkMode ? '#01244f' : '#fff' }]}>
+    <SafeAreaView style={[styles.container, { backgroundColor: isDarkMode ? '#01244f' : '#fff' }]}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <View style={{ left:-150}}>
       <Text style={{ color: isDarkMode ? '#fff' : '#000' }}>{isDarkMode ? 'Dark-content' : 'Light-content'}</Text>
@@ -27,7 +27,7 @@ import { useLanguage } from './LanguageContext';
       <View>
       <Data isDarkMode={isDarkMode} language={language} />
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
 const styles = StyleSheet.create({ 
